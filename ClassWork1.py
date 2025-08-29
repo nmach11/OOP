@@ -3,5 +3,6 @@ wages = int(input("Enter the wages: "))
 hours = int(input("Enter hours: "))
 days = int(input("Enter days: "))
 
-monthly_pay = wages*hours*days
-print(monthly_pay)
+total_wages = wages*hours*days
+print(employee_name)
+print(total_wages)
