@@ -1,4 +1,4 @@
 table_number = int(input("Table number: "))
 
 for number in range(1,16):
-    print(table_number * 1))
+    print(table_number * number)
