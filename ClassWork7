@@ -1,0 +1,28 @@
+myList = []
+
+while True:
+    print("1. Add an element to the list")
+    print("2. Remove a specific element from the list")
+    print("3. Pop the last element")
+    print("4. Display the list")
+    print("5. Quit")
+
+    option = input("Enter your choice: ")
+
+    if option == "1":
+        n = input("Enter the element to add: ")
+        myList.append(n)
+
+    elif option == "2":
+        x = input("Enter the element to remove: ")
+        myList.remove(x)
+
+    elif option == "3":
+        myList.pop()
+
+    elif option == "4":
+        print(myList)
+
+    elif option == "5":
+        print("Thank you for using the list!")
+        break
