@@ -1,0 +1,48 @@
+myList = []
+
+while True:
+    print("1. Add an element to the list")
+    print("2. Remove a specific element from the list")
+    print("3. Pop the last element")
+    print("4. Display the list")
+    print("5. Sort the list")
+    print("6. Replace an element")
+    print("7. Reverse the list")
+    print("8. Quit")
+
+    option = input("Enter your choice: ")
+
+    if option == "1":
+        n = input("Enter the element to add: ")
+        myList.append(n)
+        print(myList)
+
+    elif option == "2":
+        x = input("Enter the element to remove: ")
+        myList.remove(x)
+        print(myList)
+
+    elif option == "3":
+        myList.pop()
+        print(myList)
+
+    elif option == "4":
+        print(myList)
+
+    elif option == "5":
+        myList.sort()
+        print(myList)
+
+    elif option == "6":
+        a = int(input("Enter the index value you want to replace: "))
+        b = input("Enter the new element: ")
+        myList[a] = b
+        print(myList)
+
+    elif option == "7":
+        myList.reverse()
+        print(myList)
+
+    elif option == "8":
+        print("Thank you for using the list!")
+        break
