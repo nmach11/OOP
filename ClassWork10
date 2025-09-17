@@ -1,0 +1,32 @@
+myStudents = {}
+
+while True:
+    print("1. Add a Student")
+    print("2. See Student Records")
+    print("3. Quit")
+
+    option = input("Enter your choice: ")
+
+    if option == "1":
+        sid = input("Enter Student ID: ")
+        nname = input("Enter Student Name: ")
+        mmajor = input("Enter Major: ")
+        yyear = input("Enter Year: ")
+        ttc = input("Enter Total Credits: ")
+        ggpa = input("Enter GPA: ")
+
+        myStudents.update({sid:{
+                            "name":nname,
+                            "major":mmajor,
+                            "year":yyear,
+                            "total credits":ttc,
+                            "GPA":ggpa,
+        }})
+
+    elif option == "2":
+        for student_record in myStudents.items():
+            print(student_record)
+
+    elif option == "3":
+        print("Thank you for using the student system!")
+        break
