@@ -1,0 +1,6 @@
+myStudents = {"s1":"Nik", "s2":"Bobby"}
+myStudents.update({"s3":"Dean"})
+print(myStudents)
+
+del myStudents["s2"]
+print(myStudents)
