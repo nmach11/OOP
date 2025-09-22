@@ -1,0 +1,45 @@
+
+
+Projects = {"p1":
+                "Project_title":
+                "managers": []
+                "start_date":
+                "end_date":
+                "sponsor":
+                "budget":
+                "technologies": []
+                "team_members": []
+            }
+
+while True:
+    print("1. Project Initialization")
+    print("2. Project Closure")
+    print("3. Project Progress Update")
+    print("4. Print a Specific Project")
+    print("5. Print All Projects")
+    print("6. Quit Application")
+
+    option = input("Enter Your Choice: ")
+
+    if option == "1":
+        pt = input("Add a Project Title: ")
+        n = int(input("Enter how many managers you want to have: "))
+        for i in range(0, n):
+            mang.append(input("Enter Manager Name: "))
+        sd = input("Add the Start Date: ")
+        ed = input("Add the End Date: ")
+        n = int(input("Enter how many technologies you want: "))
+        for i in range(0, n):
+            tech.append(input("Enter the Technology: "))
+
+    elif option == "3":
+        Projects.update(pid: [
+            "Project_title": pt
+            "managers": managers
+            "start_date": sd
+            "end_date": ed
+            "sponsor": spon
+            "budget": bdg
+            "technologies": tech
+            "team_members": team
+        ])
