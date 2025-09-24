@@ -1,0 +1,52 @@
+def area_rectangle():
+    l = int(input("Enter Length: "))
+    b = int(input("Enter Base: "))
+    print("The Area is: ", l*b)
+
+def volume_of_the_cube():
+    l = int(input("Enter Length: "))
+    b = int(input("Enter Base: "))
+    h = int(input("Enter Height: "))
+    print("The Volume is:", l*b*h)
+
+def area_of_a_circle():
+    r = int(input("Enter Radius: "))
+    print("The Area of the Circle is:", 3.14*r*r)
+
+def circumference_of_a_circle():
+    r = int(input("Enter Radius: "))
+    print("The Circumference of the Circle is:", 2*3.14*r)
+
+def volume_of_a_sphere():
+    r = int(input("Enter Radius: "))
+    print("The Volume of the Sphere is:", (4/3)*3.14*r*r*r)
+
+
+while True:
+    print("1. Area of a rectangle")
+    print("2. Volume of the cube")
+    print("3. Area of a Circle")
+    print("4. Volume of a Circle")
+    print("5. Volume of a Sphere")
+    print("6. Exit")
+
+    option = input("Enter your choice: ")
+
+    if option == "1":
+        area_rectangle()
+
+    elif option == "2":
+        volume_of_the_cube()
+
+    elif option == "3":
+        area_of_a_circle()
+
+    elif option == "4":
+        circumference_of_a_circle()
+
+    elif option == "5":
+        volume_of_a_sphere()
+
+    elif option == "6":
+        print("Thank you for using the program!")
+        break
