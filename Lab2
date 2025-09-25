@@ -1,0 +1,57 @@
+myEmployees = {"e1":{
+                    "name":"Nik",
+                    "basic_pay":int(15),
+                    "allowance":int(20),
+                    "deductions":int(10),
+                    "taxes":int(20),
+                    "net_pay":int(20),
+                    "gross_pay":int(100),
+                    }}
+
+while True:
+    print("1. Add an Employee")
+    print("2. Delete an Employee")
+    print("3. Modify an Employee")
+    print("4. Display all Employees")
+    print("5. Exit")
+
+    option = input("Enter your choice: ")
+
+    if option == "1":
+        eid = input("Enter Employee ID: ")
+        nname = input("Enter Employee Name: ")
+        bbasic = input("Enter Basic Pay: ")
+        aallow = input("Enter Allowance: ")
+        ddeduc = input("Enter Deductions: ")
+        ttaxes = input("Enter Taxes: ")
+        nnet = input("Enter Net Pay: ")
+        ggross = input("Enter Gross Pay: ")
+
+    myEmployees.update({eid:{
+                                            "name": nname,
+                                            "basic_pay": bbasic,
+                                            "allowance": aallow,
+                                            "deductions": ddeduc,
+                                            "taxes": ttaxes,
+                                            "net_pay": nnet,
+                                            "gross_pay": ggross,
+                                            }})
+
+    elif option == "2":
+        eid = input("Enter Employee ID You Want to Delete: ")
+        myEmployees[eid].
+
+    elif option == "3":
+        myEmployees.update(nname: [
+            "name": nname
+            "basic_pay": bbasic
+            "allowance": aallow
+            "deductions": ddeduc
+            "taxes": ttaxes
+            "net_pay": nnet
+            "gross_pay": ggross
+        ])
+
+    elif option == "5":
+        print("Thank you for using the employee system!")
+        break
