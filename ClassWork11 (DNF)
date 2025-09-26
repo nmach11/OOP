@@ -1,15 +1,6 @@
 
 
-Projects = {"p1":
-                "Project_title":
-                "managers": []
-                "start_date":
-                "end_date":
-                "sponsor":
-                "budget":
-                "technologies": []
-                "team_members": []
-            }
+Projects = {}
 
 while True:
     print("1. Project Initialization")
@@ -22,24 +13,79 @@ while True:
     option = input("Enter Your Choice: ")
 
     if option == "1":
+        mang = []
+        tech = []
+        mem = []
+        pid = input("Enter the Project ID: ")
         pt = input("Add a Project Title: ")
         n = int(input("Enter how many managers you want to have: "))
         for i in range(0, n):
             mang.append(input("Enter Manager Name: "))
         sd = input("Add the Start Date: ")
         ed = input("Add the End Date: ")
+        spon = input("Add the Sponsor: ")
+        bdg = int(input("Enter the Budget: "))
         n = int(input("Enter how many technologies you want: "))
         for i in range(0, n):
             tech.append(input("Enter the Technology: "))
+        n = int(input("Enter how many team members there are: "))
+        for i in range(0, n):
+            mem.append(input("Enter the team member: "))
+        Projects.update({pid: {
+            "Project_title": pt,
+            "managers": mang,
+            "start_date": sd,
+            "end_date": ed,
+            "sponsor": spon,
+            "budget": bdg,
+            "technologies": tech,
+            "team_members": mem
+        }})
+
+    elif option == "2":
+        pid = input("Enter the Project ID you want to remove: ")
+        del Projects[pid]
 
     elif option == "3":
-        Projects.update(pid: [
-            "Project_title": pt
-            "managers": managers
-            "start_date": sd
-            "end_date": ed
-            "sponsor": spon
-            "budget": bdg
-            "technologies": tech
-            "team_members": team
-        ])
+        pid = input("Enter the Project ID you want to edit: ")
+        print("1. Project Title")
+        print("2. Managers")
+        print("3. Start Date")
+        print("4. End Date")
+        print("5. Sponsor")
+        print("6. Budget")
+        print("7. Tech")
+        print("8. Team Members")
+
+        option = input("Enter your choice: ")
+
+        if option == "1":
+            pt = input("Enter New Project Title: ")
+            Projects[pid]["Project_title"] = pt
+
+        elif option == "2":
+            option = input("Add or Remove Manager?: ")
+            if option == "add":
+                add = input("Add a Manager: ")
+                Projects[pid]["managers"].append(add)
+
+            elif option == "remove":
+                remove = input("Remove a Manager: ")
+                Projects[pid]["managers"].remove(remove)
+
+        elif option == "3":
+            sd = input("Enter New Start Date: ")
+            Projects[pid]["start_date"] = sd
+
+        elif option == "4":
+            ed = input("Enter New End Date: ")
+            Projects[pid]["end_date"] = ed
+
+    elif option == "4":
+        sp = input("Enter Project ID You Want to See: ")
+        print(Projects[sp])
+
+    elif option == "5":
+        for i in Projects.items():
+            print(i)
+            print("----------------------------")
