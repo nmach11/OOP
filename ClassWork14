@@ -1,0 +1,25 @@
+class Student:
+    def __init__(self): #constructor function
+        self.SID = ""
+        self.stu_Name = ""
+        self.dob = ""
+        self.major = ""
+        self.gpa = 0.0
+    def add_student(self):
+        self.SID = input("Enter SID: ")
+        self.stu_Name = input("Enter Student's Name: ")
+        self.dob = input("Enter Date of Birth: ")
+        self.major = input("Enter Major: ")
+        self.gpa = int(input("Enter the GPA: "))
+    def edit_student(self):
+        self.
+    def display_student(self):
+        print("Student ID: ", self.SID)
+        print("Student Name: ", self.stu_Name)
+        print("Date of Birth: ", self.dob)
+        print("Major: ", self.major)
+        print("GPA: ", self.gpa)
+
+#Main Code
+
+s1 = Student()
