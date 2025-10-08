@@ -1,0 +1,53 @@
+class Student:
+    def __init__(self):
+        self.stu_id = ""
+        self.stu_name = ""
+        self.major = ""
+        self.gpa = 0.0
+        self.dob = ""
+        self.courses = []
+
+    def add_student(self):
+        self.stu_id = input(print("Enter Stu ID: "))
+        self.stu_name = input(print("Enter Stu Name: "))
+        self.major = input(print("Enter major: "))
+        self.gpa = input(print("Enter GPA: "))
+        self.dob = input(print("Enter DOB: "))
+        self.courses = input(print("Enter courses: "))
+
+    def register_courses(self):
+        self.courses.append()
+
+    def edit_student(self):
+        self.stu_name = input(print("Enter the updated name: "))
+        self.major = input(print("Enter updated major: "))
+        self.gpa = input(print("Enter the updated GPA: "))
+        self.dob = input(print("Enter updated DOB: "))
+        self.courses = input(print("Enter updated courses: "))
+
+    def display_student(self):
+        print("StuID: ", self.stu_id)
+        print("Stu Name: ", self.stu_name)
+        print("Major: ", self.major)
+        print("GPA: ", self.gpa)
+        print("Date of Birth: ", self.dob)
+        for x in self.courses:
+            print("Registered Courses: ", x.cid)
+            print("Registered Courses: ", x.cname)
+
+class Course:
+    def __init__(self):
+        self.cid = ""
+        self.cname = ""
+
+    def add_course(self):
+        self.cid = input(print("Enter Course ID: "))
+        self.cname = input(print("Enter Course Name: "))
+
+
+#main code
+
+s1 = Student()
+
+s1.add_student()
+s1.display_student()
