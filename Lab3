@@ -1,0 +1,47 @@
+class Book:
+    def __init__(self, Bookid, BookName, Publisher, Author):
+        self.Bookid = Bookid
+        self.BookName = BookName
+        self.Publisher = Publisher
+        self.Author = Author
+
+    def displayBook(self):
+        print("Book ID:", self.Bookid)
+        print("Book Name:", self.BookName)
+        print("Publisher:", self.Publisher)
+        print("Author:", self.Author)
+
+
+class User:
+    def __init__(self):
+        self.userID = ""
+        self.userName = ""
+        self.Booksborrowed = []
+
+    def createUser(self):
+        self.userID = input("Enter the User ID: ")
+        self.userName = input("Enter the User's Name: ")
+
+    def displayUsers(self):
+        print("User ID:", self.userID)
+        print("User names:", self.userName)
+        for x in self.Booksborrowed:
+            print("Book ID:", x.Bookid)
+            print("Book Name:", x.BookName)
+
+    def addBook(self, bk):
+        self.Booksborrowed.append(bk)
+
+# main code
+
+b1 = Book("1", "Harry Potter", "IDK", "JK Rowling")
+b2 = Book("2", "Atomic Habits", "the second publisher", "James Clear")
+b3 = Book("3", "Meditations", "greek books", "Marcus Aurelius")
+b4 = Book("4", "Think and Grow Rich", "printing press co", "Napoleon Hill")
+b5 = Book("5", "The Lean Startup", "someone", "no clue")
+
+u1 = User()
+u2 = User()
+
+u1.createUser()
+u2.createUser()
