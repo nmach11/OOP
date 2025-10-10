@@ -166,11 +166,11 @@ while True:
                 u3.addBook(b3)
 
     elif option == "4":
-        print("Book 1:", b1)
-        print("Book 2:", b2)
-        print("Book 3:", b3)
+        print("Book 1:", b1.displayBook())
+        print("Book 2:", b2.displayBook())
+        print("Book 3:", b3.displayBook())
 
     elif option == "5":
-        print("Author 1:", a1)
-        print("Author 2:", a2)
-        print("Author 3:", a3)
+        print("Author 1:", a1.displayAuthor())
+        print("Author 2:", a2.displayAuthor())
+        print("Author 3:", a3.displayAuthor())
