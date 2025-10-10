@@ -29,8 +29,8 @@ class Author:
         print("Author's Email ID:", self.authorEmailID)
 
 class User:
-    def __init__(self):
-        self.userID = ""
+    def __init__(self, userID):
+        self.userID = userID
         self.userName = ""
         self.userPassword = ""
         self.userPhone = ""
@@ -38,7 +38,6 @@ class User:
         self.Booksborrowed = []
 
     def createUser(self):
-        self.userID = input("Enter the User ID: ")
         self.userName = input("Enter the User's Name: ")
         self.userPassword = input("Enter the Password: ")
         self.userPhone = input("Enter Phone Number:")
@@ -62,14 +61,116 @@ b1 = Book("1", "Harry Potter", "IDK", "1", "1992")
 b2 = Book("2", "Atomic Habits", "the second publisher", "2", "2019")
 b3 = Book("3", "Meditations", "greek books", "3", "1600")
 
-a1 = Author("1", "JK Rowling", "Press", "212341513", "jkrowling@gmail.com")
+a1 = Author("1", "JK Rowling", "Magic Press", "212341513", "jkrowling@gmail.com")
 a2 = Author("2", "James Clear", "Clear Printing", "948919813", "jclear@gmail.com")
-a3 = Author("3", "Marcus Aurelius", "Greco-Roman Printing", "what's a phone", "carrier pigeon")
+a3 = Author("3", "Marcus Aurelius", "Greco-Roman Printing", "5468939861", "carrier pigeon")
 
-u1 = User()
+u1 = User("1")
+u2 = User("2")
+u3 = User("3")
 
-u1.createUser()
+while True:
+    print("1. Create User")
+    print("2. Display User")
+    print("3. Assign Book to User")
+    print("4. Display Books")
+    print("5. Display Authors")
 
-u1.addBook()
+    option = input("Enter your choice: ")
 
-u1.displayUser()
+    if option == "1":
+        print("User 1")
+        print("User 2")
+        print("User 3")
+
+        y = input("Select User ID to Add: ")
+
+        if y == "1":
+            u1.createUser()
+
+        elif y == "2":
+            u2.createUser()
+
+        elif y == "3":
+            u3.createUser()
+
+    elif option == "2":
+        print("User 1")
+        print("User 2")
+        print("User 3")
+
+        n = input("Select User ID to Display: ")
+
+        if n == "1":
+            u1.displayUser()
+
+        elif n == "2":
+            u2.displayUser()
+
+        elif n == "3":
+            u3.displayUser()
+
+    elif option == "3":
+        print("Book 1:", b1)
+        print("Book 2:", b2)
+        print("Book 3:", b3)
+
+        n = input("Select Book:")
+
+        if n == "1":
+            print("User 1")
+            print("User 2")
+            print("User 3")
+
+            x = input("Select User: ")
+
+            if x == "1":
+                u1.addBook(b1)
+
+            elif x == "2":
+                u2.addBook(b1)
+
+            elif x == "3":
+                u3.addBook(b1)
+
+        elif n == "2":
+            print("User 1")
+            print("User 2")
+            print("User 3")
+
+            x = input("Select User: ")
+
+            if x == "1":
+                u1.addBook(b2)
+
+            elif x == "2":
+                u2.addBook(b2)
+
+            elif x == "3":
+                u3.addBook(b2)
+
+        elif n == "3":
+            print("User 1")
+            print("User 2")
+            print("User 3")
+
+            x = input("Select User: ")
+
+            if x == "1":
+                u1.addBook(b3)
+
+            elif x == "2":
+                u2.addBook(b3)
+
+            elif x == "3":
+                u3.addBook(b3)
+
+    elif option == "4":
+        print("Book 1:", b1)
+        print("Book 2:", b2)
+        print("Book 3:", b3)
+
+    elif option == "5":
+        print("Author 1:", a1)
+        print("Author 2:", a2)
+        print("Author 3:", a3)
