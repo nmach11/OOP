@@ -1,0 +1,52 @@
+import pickle
+
+class Product:
+    def __init__(self):
+        self.pid = ""
+        self.pname = ""
+        self.price = 0.0
+        self.description = ""
+
+    def create_product(self):
+        self.pid = input("Enter the Product ID: ")
+        self.pname = input("Enter the Product Name: ")
+        self.price = input("Enter the Product Price: ")
+        self.description = input("Enter the Product Description: ")
+
+    def get_product_details(self):
+
+    def display_product_info(self):
+        print("Product ID:", self.pid)
+        print("Product Name:", self.pname)
+        print("Price:", self.price)
+        print("Description:", self.description)
+
+# main code
+
+while True:
+    print("1. Create a Product Object")
+    print("2. Get info for the product")
+    print("3. Display the Product")
+    print("4. Write the Product Into a File")
+    print("5. Read from the file and display the product info")
+    print("6. Exit")
+
+    option = input("Enter your choice: ")
+
+    if option == "1":
+    
+
+    elif option == "4":
+        f1 = open("product_inventory.dat", "ab")
+        pickle.dump(product_obj, f1)
+
+    elif option == "5":
+        f2 = open("product_inventory.dat", "rb")
+        while 1:
+            try:
+                received_product = pickle.load(f2)
+                received_product.display_product_info()
+                print(received_product.pname)
+
+            except EOFError:
+                break
