@@ -1,0 +1,6 @@
+users = {
+    "usr1":{"uid": "jselwyn", "pwd":"123"},
+    "usr2":{"uid": "bjoe", "pwd":"321"},
+    "usr3":{"uid": "jbilly", "pwd":"567"},
+    "usr4":{"uid": "mjim", "pwd":"877"},
+}
