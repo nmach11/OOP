@@ -1,5 +1,6 @@
 import pickle
 
+
 class Product:
     def __init__(self):
         self.pid = ""
@@ -10,16 +11,15 @@ class Product:
     def create_product(self):
         self.pid = input("Enter the Product ID: ")
         self.pname = input("Enter the Product Name: ")
-        self.price = input("Enter the Product Price: ")
+        self.price = float(input("Enter the Product Price: "))
         self.description = input("Enter the Product Description: ")
-
-    def get_product_details(self):
 
     def display_product_info(self):
         print("Product ID:", self.pid)
         print("Product Name:", self.pname)
         print("Price:", self.price)
         print("Description:", self.description)
+
 
 # main code
 
@@ -34,11 +34,19 @@ while True:
     option = input("Enter your choice: ")
 
     if option == "1":
-    
+        product_object = Product()
+
+    elif option == "2":
+        product_object.create_product()
+
+    elif option == "3":
+        product_object.display_product_info()
 
     elif option == "4":
         f1 = open("product_inventory.dat", "ab")
-        pickle.dump(product_obj, f1)
+        pickle.dump(product_object, f1)
+
+        f1.close()
 
     elif option == "5":
         f2 = open("product_inventory.dat", "rb")
@@ -46,7 +54,9 @@ while True:
             try:
                 received_product = pickle.load(f2)
                 received_product.display_product_info()
-                print(received_product.pname)
 
             except EOFError:
                 break
+
+    elif option == "6":
+        break
