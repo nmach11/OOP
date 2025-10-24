@@ -1,3 +1,5 @@
+import pickle
+
 class Customer:
     def __init__(self):
         self.cid = ""
@@ -90,20 +92,19 @@ c2.assign_ccard(cc)
 c1.debit_from(100)
 c2.credit_to(100)
 
-## Display Customer Info
+## Display Customer and Card Info
 
 c1.display_Cust_info()
-c2.display_Cust_info()
-
-## Display Card Info
-
 dc.display_card_info()
+
+c2.display_Cust_info()
 cc.display_card_info()
 
 ## Commit
 
-
+f1 = open("customers.dat", "wb")
+pickle.dump([c1, c2], f1)
 
 ## Exit
 
-
+print("Thank you for using the banking system")
