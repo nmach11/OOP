@@ -1,0 +1,109 @@
+class Customer:
+    def __init__(self):
+        self.cid = ""
+        self.cname = ""
+        self.acc_no = ""
+        self.phone = ""
+        self.emailID = ""
+        self.balance = 0.0
+        self.cc = []
+        self.dc = []
+
+    def add_values_to_Customer(self):
+        self.cid = input("Enter Customer ID: ")
+        self.cname = input("Enter Customer Name: ")
+        self.acc_no = input("Enter Account Number: ")
+        self.phone = input("Enter Phone Number: ")
+        self.emailID = input("Enter Email: ")
+        self.balance = float(input("Enter Account Balance: "))
+        self.cc = []
+        self.dc = []
+
+    def debit_from(self, amt):
+        self.balance = self.balance - amt
+
+    def credit_to(self, amt):
+        self.balance = self.balance + amt
+
+    def assign_ccard(self, my_card):
+        self.cc.append(my_card)
+
+    def assign_dcard(self, my_card):
+        self.dc.append(my_card)
+
+    def display_Cust_info(self):
+        print("Customer ID:", self.cid)
+        print("Customer Name:", self.cname)
+        print("Account Number:", self.acc_no)
+        print("Phone Number:", self.phone)
+        print("Email:", self.emailID)
+        print("Account Balance:", self.balance)
+
+class Card:
+    def __init__(self):
+        self.type = ""
+        self.cnumber = ""
+        self.cvv = ""
+        self.expiration_date = ""
+        self.balance = 0.0
+
+    def create_card(self):
+        self.type = input("Debit or Credit?: ")
+        self.cnumber = input("Enter the Card Number: ")
+        self.cvv = input("Enter CVV: ")
+        self.expiration_date = input("Enter Expiration Date: ")
+        self.balance = float(input("Enter the Card Balance: "))
+
+    def display_card_info(self):
+        print("Card Type:", self.type)
+        print("Card Number:", self.cnumber)
+        print("CVV:", self.cvv)
+        print("Expiration Date:", self.expiration_date)
+        print("Card Balance:", self.balance)
+
+
+# main code
+
+## Create Customer Objects
+
+c1 = Customer()
+c2 = Customer()
+
+c1.add_values_to_Customer()
+c2.add_values_to_Customer()
+
+## Create Card Objects
+
+dc = Card()
+cc = Card()
+
+dc.create_card()
+cc.create_card()
+
+## Assign Card Objects to Customer Objects
+
+c1.assign_dcard(dc)
+c2.assign_ccard(cc)
+
+## Transfer Funds Between Customer Objects
+
+c1.debit_from(100)
+c2.credit_to(100)
+
+## Display Customer Info
+
+c1.display_Cust_info()
+c2.display_Cust_info()
+
+## Display Card Info
+
+dc.display_card_info()
+cc.display_card_info()
+
+## Commit
+
+
+
+## Exit
+
+
