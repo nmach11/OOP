@@ -1,0 +1,15 @@
+import tkinter
+
+root = tkinter.Tk()
+root.resizable(False, False)
+
+myCanvas = tkinter.Canvas(root, bg="white", height=500, width=800)
+
+shape1 = myCanvas.create_oval(0,0,25,25, fill="red")
+shape2 = myCanvas.create_oval(0,0,50,50, fill="orange")
+shape3 = myCanvas.create_oval(0,0,100,100, fill="yellow")
+shape4 = myCanvas.create_oval(0,0,125,125, fill="green")
+shape5 = myCanvas.create_oval(0,0,150,150, fill="blue")
+
+myCanvas.pack()
+root.mainloop()
