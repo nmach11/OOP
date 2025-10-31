@@ -1,0 +1,41 @@
+import streamlit as st
+from PIL import Image
+
+col1, col2 = st.columns((4,5))
+
+with col1:
+    st.title("My Resume")
+    st.header("Nik Machemehl")
+
+with col2:
+    image = Image.open('1.jpg')
+    st.image(image, width=450)
+
+st.divider()
+
+st.markdown("**About Me**")
+st.text("I am an Academician, Researcher, and a Musician")
+st.text("I am currently working with JBU")
+
+st.divider()
+
+st.markdown("**Skills**")
+st.text("Photoshop, Photography, Illustrator, After Effects, Premiere Pro")
+
+st.divider()
+
+st.markdown("**Projects**")
+st.text("Project1, Project2, Project3")
+
+st.divider()
+
+st.markdown("**Hobbies**")
+st.text("Guitar, Piano, Reading")
+
+st.divider()
+
+st.markdown("**Contact Me**")
+st.text_input("Your Name:")
+st.text_input("Your Email:")
+st.text_area("Message:")
+st.button("Send Message")
