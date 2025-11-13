@@ -4,41 +4,39 @@ from tkinter import *
 top = Tk()
 top.geometry("500x500")
 
+valueTxt = Text(width=55, height=2)
+valueTxt.place(x=25, y=100)
+
 class Queue:
     def __init__(self):
         self.element = []
 
     def enqueue(self):
         x = valueTxt.get(1.0, "end-1c")
-        self.element.append(x)
+        if x:
+            self.element.append(x)
+            valueTxt.delete(1.0, "end-1c")
 
     def dequeue(self):
-        self.element.remove(0)
+        self.element.pop(0)
 
     def displayQueue(self):
         print("Elements in Queue:")
         for i in self.element:
             print(i)
 
-    valueTxt = Text(width=55, height=2)
-    valueTxt.place(x=25, y=100)
-
-    B1 = Button(top, text="Enqueue", width=10, height=5)
-    B1.place(x=25, y=150)
-
-    B1 = Button(top, text="Dequeue", width=10, height=5)
-    B1.place(x=210, y=150)
-
-    valueTxt = Text(width=55, height=2)
-    valueTxt.place(x=25, y=250)
-
-    B1 = Button(top, text="Display", width=10, height=5)
-    B1.place(x=390, y=150)
 
 #Main Code
 q1 = Queue()
 q2 = Queue()
 
-valueTxt = Text(top)
+B1 = Button(top, text="Enqueue", width=10, height=5, command=q1.enqueue)
+B1.place(x=25, y=150)
+
+B1 = Button(top, text="Dequeue", width=10, height=5, command=q1.dequeue)
+B1.place(x=210, y=150)
+
+B1 = Button(top, text="Display", width=10, height=5, command=q1.displayQueue)
+B1.place(x=390, y=150)
 
 top.mainloop()
