@@ -22,15 +22,6 @@ class Stack:
         for i in self.element:
             print(i)
 
-    B1 = Button(top, text="Push", width=10, height=5, command=lambda: Stack)
-    B1.place(x=25, y=150)
-
-    B1 = Button(top, text="Pop", width=10, height=5, command=lambda: Stack.pop)
-    B1.place(x=210, y=150)
-
-    B1 = Button(top, text="Display", width=10, height=5, command=lambda: Stack.displayStack)
-    B1.place(x=390, y=150)
-
 ## Main Code
 
 s1 = Stack()
@@ -40,5 +31,14 @@ s1.push()
 s1.push()
 s1.pop()
 s1.displayStack()
+
+B1 = Button(top, text="Push", width=10, height=5, command=s1.push)
+B1.place(x=25, y=150)
+
+B1 = Button(top, text="Pop", width=10, height=5, command=s1.pop)
+B1.place(x=210, y=150)
+
+B1 = Button(top, text="Display", width=10, height=5, command=s1.displayStack)
+B1.place(x=390, y=150)
 
 top.mainloop()
