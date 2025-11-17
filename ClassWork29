@@ -1,0 +1,45 @@
+
+class Person():
+    def __init__(self):
+        self.pname = ""
+        self.dob = ""
+        self.gender = ""
+
+        def display(self):
+            print("Person_Name: ", self.pname)
+            print("Person_DOB: ", self.dob)
+            print("Person_Gender: ", self.gender)
+
+
+class Faculty(Person):
+    def __init__(self,x,y,z,a,b):
+        Person.__init__(self,x,y,z)
+        self.course = a
+        self.fid = b
+        
+
+class Student(Person):
+    def __init__(self,x,y,z,a,b):
+        Person.__init__(self,x,y,z)
+        self.course = a
+        self.sid = b
+
+    def display(self, Value = "", onemore = ""):
+        print(Person.display(self))
+        print("Student Course: ", self.course)
+        print("Student ID: ", self.sid)
+        if Value != "":
+            print("Within Polymorphism", Value)
+        elif onemore != "":
+            print("Within Polymorphism", onemore)
+        
+
+s1 = Student("Jim", "2004", "Male", "CS", "123")
+
+s1.display()
+
+s1.display("Bob")
+
+s1.display("Jared", "22")
+
+f1 = Faculty("Joe", "1997", "Male", "Bible", "Professor")
