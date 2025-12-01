@@ -1,0 +1,5 @@
+import ClassWork29 as cl
+
+p1 = cl.Faculty()
+p2 = cl.Student()
+
