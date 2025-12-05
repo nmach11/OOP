@@ -1,0 +1,16 @@
+import pandas as pd
+df = pd.read_csv("data01.csv")
+
+y = df['median_house_value'].median()
+print("Median:", y)
+
+for x in df.index:
+  if df.loc[x, "total_rooms"] < 500:
+    df.loc[x, "total_rooms"] = df['total_rooms'].median()
+
+for x in df.index:
+  x = df['housing_median_age']
+  if x < 25:
+    print("Under 25:", x)
+
+df
