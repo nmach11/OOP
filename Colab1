@@ -1,25 +1,27 @@
 import pandas as pd
-df = pd.read_csv("data.csv")
+df = pd.read_csv("data01.csv")
+
+y = df['median_house_value'].median()
+print("Median of Median House Value:", y)
+
+print("-----------------------------------------------------")
 
 for x in df.index:
-  if df.loc[x, "Duration"] > 120:
-    df.loc[x, "Duration"] = 100
+  if df.loc[x, "total_rooms"] < 500:
+    b = df.loc[x, "total_rooms"] = df['total_rooms'].median()
+    print("Median of Total Rooms:", b)
 
-for x in df.index:
-  average_val = (df.loc[x, "Pulse"] + df.loc[x, "Maxpulse"])/2
-  df.loc[x, "Average Pulse"] = average_val  
+print("-----------------------------------------------------")
+
+a = df['housing_median_age'] < 25
+print("Housing Median Age Less Than 25:", a)
+
+print("-----------------------------------------------------")
 
 import matplotlib.pyplot as plt
-df.plot()
-plt.show()
 
-df.plot(kind = 'scatter', x = 'Duration', y = 'Calories')
-plt.show()
+df.plot(kind = 'scatter', x = 'longitude', y = 'latitude')
+df.plot(kind = 'line', x = 'total_rooms', y = 'total_bedrooms')
 
-df.plot(kind = 'line', x = 'Duration', y = 'Calories')
-plt.show()
-
-df.plot(kind = 'bar', x = 'Duration', y = 'Calories')
-plt.show()
-
+plt.show
 df
