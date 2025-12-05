@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+
 df = pd.read_csv("data01.csv")
 
 y = df['median_house_value'].median()
@@ -6,10 +8,13 @@ print("Median of Median House Value:", y)
 
 print("-----------------------------------------------------")
 
+median_rooms = df['total_rooms'].median()
+
 for x in df.index:
   if df.loc[x, "total_rooms"] < 500:
-    b = df.loc[x, "total_rooms"] = df['total_rooms'].median()
-    print("Median of Total Rooms:", b)
+   df.loc[x, "total_rooms"] = median_rooms
+   print("Median Rooms:", median_rooms)
+
 
 print("-----------------------------------------------------")
 
@@ -18,10 +23,8 @@ print("Housing Median Age Less Than 25:", a)
 
 print("-----------------------------------------------------")
 
-import matplotlib.pyplot as plt
-
 df.plot(kind = 'scatter', x = 'longitude', y = 'latitude')
 df.plot(kind = 'line', x = 'total_rooms', y = 'total_bedrooms')
 
-plt.show
+plt.show()
 df
